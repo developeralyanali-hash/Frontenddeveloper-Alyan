@@ -1,7 +1,7 @@
 import { GitBranch,Mail } from "lucide-react";
 
 
-import { FaInstagram } from "react-icons/fa";
+
 import { LinkIcon } from "lucide-react";
 
 
@@ -36,12 +36,7 @@ export const socials: Social[] = [
     href: "https://www.linkedin.com/in/alyan--ali/",
     icon: LinkIcon,
   },
-  {
-    id: "instagram",
-    name: "Instagram",
-    href: "https://www.instagram.com/in/alyan--ali/",
-    icon: FaInstagram,
-  },
+  
   {
     id: "email",
     name: "Email",
