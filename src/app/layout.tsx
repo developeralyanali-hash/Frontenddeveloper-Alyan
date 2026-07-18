@@ -1,17 +1,11 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-
 import "@/app/globals.css";
-
 import { SITE_CONFIG } from "@/lib/constants";
 
 /**
- * ------------------------------------------------------------------
  * Global Font
- * ------------------------------------------------------------------
- * Inter is used throughout the portfolio.
- * Loaded with next/font for optimal performance.
- * ------------------------------------------------------------------
+ * Inter is used throughout the portfolio, loaded with next/font for optimal performance.
  */
 const inter = Inter({
   subsets: ["latin"],
@@ -19,26 +13,16 @@ const inter = Inter({
 });
 
 /**
- * ------------------------------------------------------------------
  * Global Metadata
- * ------------------------------------------------------------------
- * Used for:
- * - SEO
- * - Browser title
- * - Open Graph
- * - Twitter cards
- * ------------------------------------------------------------------
+ * Handled by Next.js App Router for SEO, Open Graph, and Twitter integration.
  */
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_CONFIG.url),
-
   title: {
     default: SITE_CONFIG.title,
     template: `%s | ${SITE_CONFIG.name}`,
   },
-
   description: SITE_CONFIG.description,
-
   keywords: [
     "Frontend Developer",
     "React Developer",
@@ -50,15 +34,8 @@ export const metadata: Metadata = {
     "Web Developer",
     "Responsive Websites",
   ],
-
-  authors: [
-  {
-    name: "Alyan Ali",
-  },
-],
-
-creator: "Alyan Ali",
-
+  authors: [{ name: "Alyan Ali" }],
+  creator: "Alyan Ali",
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -75,41 +52,29 @@ creator: "Alyan Ali",
       },
     ],
   },
-
   twitter: {
     card: "summary_large_image",
     title: SITE_CONFIG.title,
     description: SITE_CONFIG.description,
     images: [SITE_CONFIG.ogImage],
   },
-
   icons: {
     icon: "/favicon.ico",
   },
 };
 
-/**
- * ------------------------------------------------------------------
- * Root Layout
- * ------------------------------------------------------------------
- * Wraps the entire application.
- * Responsible only for:
- * - HTML structure
- * - Global styles
- * - Fonts
- * - Metadata
- * ------------------------------------------------------------------
- */
-export default function RootLayout({
-  children,
-}: Readonly<{
+interface RootLayoutProps {
   children: React.ReactNode;
-}>) {
+}
+
+/**
+ * Root Layout
+ * Base shell that wraps the application context.
+ */
+export default function RootLayout({ children }: Readonly<RootLayoutProps>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${inter.className} bg-white text-[#111111] antialiased`}
-      >
+      <body className={`${inter.className} bg-white text-[#111111] antialiased`}>
         {children}
       </body>
     </html>

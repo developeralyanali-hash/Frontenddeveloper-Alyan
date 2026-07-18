@@ -14,7 +14,7 @@ import type { CaseStudy } from "@/types/caseStudy";
 export const caseStudies: CaseStudy[] = [
   {
     id: "pizza-shop",
-    category: "Restaurant Website",
+    category: "Restaurant Platform",
     title: "Pizza Shop ",
     problem:
       "The restaurant needed a modern online presence where customers could explore the menu quickly and enjoy a smooth browsing experience across all devices.",
@@ -37,7 +37,7 @@ export const caseStudies: CaseStudy[] = [
 
   {
     id: "hair-salon",
-    category: "Business Website",
+    category: "Business Platform",
     title: "Hair Salon",
     problem:
       "The salon needed a professional website to showcase its services, attract new customers and build trust through a modern online presence.",

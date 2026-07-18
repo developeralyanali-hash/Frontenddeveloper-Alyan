@@ -13,45 +13,17 @@ import { useScroll } from "@/hooks/useScroll";
 import { cn } from "@/lib/utils";
 
 /**
- * ------------------------------------------------------------------
  * Navbar
- * ------------------------------------------------------------------
- * Global navigation for the portfolio.
- *
- * Features:
- * - Sticky navigation
- * - Background changes on scroll
- * - Responsive mobile menu
- * - Smooth animations
- * ------------------------------------------------------------------
+ * Global navigation header for the portfolio supporting sticky blurring on scroll,
+ * and an animated responsive mobile drawer link overlay.
  */
-
 export default function Navbar() {
-  /**
-   * --------------------------------------------------------------
-   * States
-   * --------------------------------------------------------------
-   */
-
   const [isOpen, setIsOpen] = useState(false);
-
-  /**
-   * --------------------------------------------------------------
-   * Scroll State
-   * --------------------------------------------------------------
-   * useScroll() returns current scroll position.
-   */
-
   const scrollY = useScroll();
   const scrolled = scrollY > 20;
 
-  /**
-   * --------------------------------------------------------------
-   * Helpers
-   * --------------------------------------------------------------
-   */
-
   const closeMenu = () => setIsOpen(false);
+  const toggleMenu = () => setIsOpen((prev) => !prev);
 
   return (
     <header
@@ -64,36 +36,22 @@ export default function Navbar() {
     >
       <Container>
         <div className="flex h-20 items-center justify-between">
-          {/* ======================================================
-              Logo
-          ====================================================== */}
+          {/* Brand Logo */}
+          <Link href="/" className="flex items-center gap-3" aria-label="Go to homepage">
+            <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#7B3FFF] to-[#8B5CF6] font-bold text-white shadow-lg shadow-violet-500/20 sm:h-11 sm:w-11">
+              AA
+            </div>
+            <div className="min-w-0 leading-tight">
+              <h1 className="truncate text-[20px] font-bold text-[#111111] sm:text-lg lg:text-xl">
+                Alyan Ali
+              </h1>
+              <p className="hidden text-sm font-medium text-[#6B7280] sm:block">
+                Frontend Developer
+              </p>
+            </div>
+          </Link>
 
-          <Link
-  href="/"
-  className="flex items-center gap-3"
-  aria-label="Go to homepage"
->
-  {/* Brand Mark */}
-  <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-gradient-to-br from-[#7B3FFF] to-[#8B5CF6] font-bold text-white shadow-lg shadow-violet-500/20 sm:h-11 sm:w-11">
-    AA
-  </div>
-
-  {/* Brand Text */}
-  <div className="min-w-0 leading-tight">
-   <h1 className="truncate text-[20px] font-bold text-[#111111] sm:text-lg lg:text-xl">
-  Alyan Ali
-</h1>
-
-<p className="hidden text-sm font-medium text-[#6B7280] sm:block">
-  Frontend Developer
-</p>
-  </div>
-</Link>
-
-          {/* ======================================================
-              Desktop Navigation
-          ====================================================== */}
-
+          {/* Desktop Navigation */}
           <nav className="hidden items-center gap-8 lg:flex">
             {navigation.map((item) => (
               <Link
@@ -106,10 +64,7 @@ export default function Navbar() {
             ))}
           </nav>
 
-          {/* ======================================================
-              Desktop CTA
-          ====================================================== */}
-
+          {/* Desktop Call to Action */}
           <div className="hidden lg:block">
             <Button
               href={`#${SECTION_IDS.contact}`}
@@ -120,14 +75,11 @@ export default function Navbar() {
             </Button>
           </div>
 
-          {/* ======================================================
-              Mobile Toggle
-          ====================================================== */}
-
+          {/* Mobile Menu Toggle */}
           <button
             type="button"
             aria-label="Toggle navigation menu"
-            onClick={() => setIsOpen((prev) => !prev)}
+            onClick={toggleMenu}
             className="flex h-11 w-11 items-center justify-center rounded-xl border border-[#E5E7EB] bg-white transition hover:border-[#7B3FFF] lg:hidden"
           >
             {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -135,10 +87,7 @@ export default function Navbar() {
         </div>
       </Container>
 
-      {/* ==========================================================
-          Mobile Menu
-      ========================================================== */}
-
+      {/* Mobile Drawer Overlay */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
@@ -162,20 +111,15 @@ export default function Navbar() {
                 ))}
 
                 <div className="mt-4">
-                  
-                   <a
-  href={`#${SECTION_IDS.contact}`}
-  onClick={closeMenu}
-  className="block"
->
-  <Button
-    variant="primary"
-    fullWidth
-    rightIcon={<ArrowRight size={16} />}
-  >
-    Get Started
-  </Button>
-</a>
+                  <Button
+                    href={`#${SECTION_IDS.contact}`}
+                    onClick={closeMenu}
+                    variant="primary"
+                    fullWidth
+                    rightIcon={<ArrowRight size={16} />}
+                  >
+                    Get Started
+                  </Button>
                 </div>
               </nav>
             </Container>

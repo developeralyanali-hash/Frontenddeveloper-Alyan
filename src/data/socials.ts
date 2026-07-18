@@ -1,13 +1,5 @@
-import { GitBranch,Mail } from "lucide-react";
-
-
-
-import { LinkIcon } from "lucide-react";
-
-
-
+import { Github, Linkedin, Mail } from "lucide-react";
 import type { Social } from "@/types/social";
-import { i } from "framer-motion/client";
 
 /**
  * ------------------------------------------------------------------
@@ -18,7 +10,7 @@ import { i } from "framer-motion/client";
  * Used in:
  * - Footer
  * - Contact Section
- * - Hero (future)
+ * - Hero Section
  * - SEO / Metadata
  * ------------------------------------------------------------------
  */
@@ -28,19 +20,18 @@ export const socials: Social[] = [
     id: "github",
     name: "GitHub",
     href: "https://github.com/developeralyanali-hash",
-    icon: GitBranch,
+    icon: Github,
   },
   {
     id: "linkedin",
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/alyan--ali/",
-    icon: LinkIcon,
+    icon: Linkedin,
   },
-  
   {
     id: "email",
     name: "Email",
-    href: "mailto:example@gmail.com",
+    href: "mailto:developeralyanali@gmail.com",
     icon: Mail,
   },
 ];
