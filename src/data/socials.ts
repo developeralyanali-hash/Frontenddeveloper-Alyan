@@ -1,5 +1,9 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { LinkIcon, Mail } from "lucide-react";
+
+import { GitBranch } from "lucide-react";
 import type { Social } from "@/types/social";
+
+import { FaGithub } from "react-icons/fa6";
 
 /**
  * ------------------------------------------------------------------
@@ -20,13 +24,13 @@ export const socials: Social[] = [
     id: "github",
     name: "GitHub",
     href: "https://github.com/developeralyanali-hash",
-    icon: Github,
+    icon: FaGithub,
   },
   {
     id: "linkedin",
     name: "LinkedIn",
     href: "https://www.linkedin.com/in/alyan--ali/",
-    icon: Linkedin,
+    icon: LinkIcon,
   },
   {
     id: "email",
