@@ -1,11 +1,14 @@
 import {
   Briefcase,
-  GitBranch,
-  LinkIcon,
   Mail,
   MapPin,
   Phone,
 } from "lucide-react";
+
+import {
+  FaGithub,
+  FaLinkedin,
+} from "react-icons/fa6";
 
 import type { ContactInfo } from "@/types/contact";
 
@@ -45,13 +48,13 @@ export const contact: ContactInfo = {
       label: "Email",
       value: "developeralyanali@gmail.com",
       icon: Mail,
-      href: "mailto:example@gmail.com",
+      href: "mailto:developeralyanali@gmail.com",
     },
     {
       label: "Phone",
       value: "+92 3325942042",
       icon: Phone,
-      href: "tel:0000000000",
+      href: "tel:+923325942042",
     },
     {
       label: "Location",
@@ -87,12 +90,12 @@ export const contact: ContactInfo = {
     {
       label: "GitHub",
       href: "https://github.com/developeralyanali-hash",
-      icon: GitBranch,
+      icon: FaGithub,
     },
     {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/alyan--ali/",
-      icon: LinkIcon,
+      icon: FaLinkedin,
     },
   ],
 };

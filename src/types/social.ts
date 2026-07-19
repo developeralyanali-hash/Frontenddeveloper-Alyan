@@ -1,4 +1,4 @@
-import type { ComponentType, SVGProps } from "react";
+import type { AppIcon } from "@/types/icon";
 
 /**
  * ------------------------------------------------------------------
@@ -37,11 +37,11 @@ export interface Social {
   /**
    * Icon component.
    *
-   * Supports icons from:
-   * - lucide-react
-   * - react-icons
+   * Supports:
+   * - lucide-react (UI icons)
+   * - react-icons (official brand logos)
    */
-  icon: ComponentType<SVGProps<SVGSVGElement>>;
+  icon: AppIcon;
 }
 
 /**

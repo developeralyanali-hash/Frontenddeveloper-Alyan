@@ -1,4 +1,5 @@
 import type { LucideIcon } from "lucide-react";
+import type { AppIcon } from "@/types/icon";
 
 /**
  * ------------------------------------------------------------------
@@ -9,9 +10,6 @@ import type { LucideIcon } from "lucide-react";
 export interface ContactItem {
   /**
    * Card title.
-   *
-   * Example:
-   * Email
    */
   label: string;
 
@@ -21,7 +19,7 @@ export interface ContactItem {
   value: string;
 
   /**
-   * Lucide icon.
+   * UI icon (Lucide only).
    */
   icon: LucideIcon;
 
@@ -54,7 +52,13 @@ export interface ContactForm {
 export interface ContactSocial {
   label: string;
   href: string;
-  icon: LucideIcon;
+
+  /**
+   * Supports:
+   * - lucide-react
+   * - react-icons
+   */
+  icon: AppIcon;
 }
 
 /**
@@ -65,16 +69,10 @@ export interface ContactSocial {
 
 export interface ContactInfo {
   eyebrow: string;
-
   heading: string;
-
   highlightedWord: string;
-
   description: string;
-
   items: ContactItem[];
-
   form: ContactForm;
-
   socials: ContactSocial[];
 }
