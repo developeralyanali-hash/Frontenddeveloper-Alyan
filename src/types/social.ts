@@ -1,4 +1,4 @@
-import type { LucideIcon } from "lucide-react";
+import type { ComponentType, SVGProps } from "react";
 
 /**
  * ------------------------------------------------------------------
@@ -35,10 +35,13 @@ export interface Social {
   href: string;
 
   /**
-   * Lucide React icon component.
+   * Icon component.
+   *
+   * Supports icons from:
+   * - lucide-react
+   * - react-icons
    */
-  icon: LucideIcon;
-
+  icon: ComponentType<SVGProps<SVGSVGElement>>;
 }
 
 /**
