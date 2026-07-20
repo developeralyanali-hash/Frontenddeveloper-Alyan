@@ -76,10 +76,10 @@ export default function Hero() {
                 Building
               </span>
               <span className="mt-2 block bg-gradient-to-r from-[#7B3FFF] to-[#A855F7] bg-clip-text text-[2rem] text-transparent sm:text-[2.35rem] md:text-[2.45rem] lg:text-[3.15rem] xl:text-[3.45rem]">
-                Scalable React &
+                Fast & Scalable
               </span>
               <span className="mt-2 block whitespace-nowrap text-[1.55rem] sm:whitespace-normal sm:text-[2rem] md:text-[2.15rem] lg:text-[2.35rem] xl:text-[2.6rem]">
-                Next.js Applications
+                Web Applications
               </span>
             </motion.h1>
 
@@ -88,7 +88,7 @@ export default function Hero() {
               variants={fadeInLeft}
               className="mx-auto mt-6 max-w-xl text-center text-base leading-8 text-[#6B7280] sm:max-w-2xl sm:text-lg md:max-w-3xl lg:mx-0 lg:mt-8 lg:max-w-xl lg:text-left"
             >
-              I help SaaS companies, healthcare providers, manufacturers, and agencies build fast, scalable React and Next.js applications with modern UI, seamless user experiences, and production-ready frontend architecture.
+              I help SaaS startups, healthcare providers, and service-based businesses build fast, scalable web applications with React and Next.js—creating modern user experiences, responsive interfaces, and production-ready frontend solutions.
             </motion.p>
 
             {/* CTA Buttons */}
