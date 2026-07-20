@@ -78,7 +78,7 @@ export default function Hero() {
               <span className="mt-2 block bg-gradient-to-r from-[#7B3FFF] to-[#A855F7] bg-clip-text text-[2rem] text-transparent sm:text-[2.35rem] md:text-[2.45rem] lg:text-[3.15rem] xl:text-[3.45rem]">
                 Fast & Scalable
               </span>
-              <span className="mt-2 block whitespace-nowrap text-[1.55rem] sm:whitespace-normal sm:text-[2rem] md:text-[2.15rem] lg:text-[2.35rem] xl:text-[2.6rem]">
+               <span className="mt-2 block text-[1.55rem] sm:text-[2rem] md:text-[2.15rem] lg:text-[2.35rem] xl:text-[2.6rem]">
                 Web Applications
               </span>
             </motion.h1>
@@ -86,7 +86,7 @@ export default function Hero() {
             {/* Description */}
             <motion.p
               variants={fadeInLeft}
-              className="mx-auto mt-6 max-w-xl text-center text-base leading-8 text-[#6B7280] sm:max-w-2xl sm:text-lg md:max-w-3xl lg:mx-0 lg:mt-8 lg:max-w-xl lg:text-left"
+              className="mx-auto mt-6 max-w-xl break-words text-center text-base leading-8 text-[#6B7280] sm:max-w-2xl sm:text-lg md:max-w-3xl lg:mx-0 lg:mt-8 lg:max-w-xl lg:text-left"
             >
               I help SaaS startups, healthcare providers, and service-based businesses build fast, scalable web applications with React and Next.js—creating modern user experiences, responsive interfaces, and production-ready frontend solutions.
             </motion.p>
@@ -147,144 +147,151 @@ export default function Hero() {
           </motion.div>
 
           {/* ================= RIGHT COLUMN ================= */}
-          <motion.div
-            variants={fadeInRight}
-            initial="hidden"
-            animate="visible"
-            className="relative order-2 flex h-[400px] items-center justify-center sm:h-[500px] lg:h-[620px] lg:-mt-10"
-          >
-            <div className="relative flex h-[420px] w-full items-center justify-center sm:h-[500px] lg:h-[620px]">
-              
-              {/* Background Glow */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="h-[320px] w-[320px] rounded-full bg-gradient-to-br from-violet-500/20 to-fuchsia-500/15 blur-3xl sm:h-[420px] sm:w-[420px]" />
-              </div>
+<motion.div
+  variants={fadeInRight}
+  initial="hidden"
+  animate="visible"
+  className="order-2 flex flex-col items-center"
+>
 
-              {/* Profile Image & Spinning Border */}
-              <motion.div
-                animate={{ y: [0, -12, 0] }}
-                transition={{
-                  duration: 6,
-                  repeat: Infinity,
-                  repeatType: "mirror",
-                  ease: "easeInOut",
-                }}
-                className="relative z-10 flex items-center justify-center"
-              >
-                <motion.div
-                  animate={{ rotate: 360 }}
-                  transition={{
-                    duration: 32,
-                    repeat: Infinity,
-                    ease: "linear",
-                  }}
-                  className="absolute h-[305px] w-[305px] rounded-full border border-dashed border-[#7B3FFF]/80 sm:h-[390px] sm:w-[390px] lg:h-[505px] lg:w-[505px] xl:h-[555px] xl:w-[555px]"
-                />
-                <div className="relative h-[280px] w-[280px] overflow-hidden rounded-full border-8 border-white bg-white shadow-[0_40px_100px_rgba(123,63,255,0.24)] sm:h-[360px] sm:w-[360px] lg:h-[470px] lg:w-[470px] xl:h-[520px] xl:w-[520px]">
-                  <Image
-                    src="/images/hero/alyanali.png"
-                    alt="Alyan Ali"
-                    fill
-                    priority
-                    className="object-cover"
-                  />
-                </div>
-              </motion.div>
+  {/* IMAGE AREA */}
+  <div className="relative flex h-[340px] w-full items-center justify-center sm:h-[460px] lg:h-[620px]">
 
-              {/* Badge 1: React.js */}
-              <motion.div
-                animate={{ y: [0, -8, 0], rotate: [0, 1, 0] }}
-                transition={{
-                  duration: 5.5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                }}
-                className="absolute left-4 top-28 z-20 hidden scale-[0.72] rounded-2xl border border-[#ECECEC] bg-white px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)] sm:left-6 sm:top-20 sm:scale-90 lg:left-6 lg:top-24 lg:flex lg:scale-100 lg:px-5 lg:py-4"
-              >
-                <div className="flex items-center gap-2">
-                  <Code2 size={18} className="text-[#7B3FFF]" />
-                  <span className="text-sm font-semibold text-[#111111]">
-                    React.js
-                  </span>
-                </div>
-              </motion.div>
+    {/* Background Glow */}
+    <div className="absolute inset-0 flex items-center justify-center">
+      <div
+        className="
+        h-[280px] w-[280px]
+        rounded-full
+        bg-gradient-to-br
+        from-violet-500/20
+        to-fuchsia-500/15
+        blur-3xl
+        sm:h-[380px]
+        sm:w-[380px]
+        lg:h-[420px]
+        lg:w-[420px]
+        "
+      />
+    </div>
 
-              {/* Badge 2: Responsive */}
-              <motion.div
-                animate={{ y: [0, -12, 0], rotate: [0, -1, 0] }}
-                transition={{
-                  duration: 6.8,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.4,
-                }}
-                className="absolute top-28 z-20 hidden rounded-2xl border border-[#ECECEC] bg-white px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)] lg:right-6 lg:flex"
-              >
-                <div className="flex items-center gap-2">
-                  <MonitorSmartphone size={18} className="text-[#7B3FFF]" />
-                  <span className="text-sm font-semibold text-[#111111]">
-                    Responsive
-                  </span>
-                </div>
-              </motion.div>
 
-              {/* Badge 3: Clean UI */}
-              <motion.div
-                animate={{ y: [0, -10, 0], rotate: [0, 1, 0] }}
-                transition={{
-                  duration: 6.2,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 0.8,
-                }}
-                className="absolute bottom-16 z-20 hidden rounded-2xl border border-[#ECECEC] bg-white px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)] lg:left-8 lg:flex"
-              >
-                <div className="flex items-center gap-2">
-                  <Palette size={18} className="text-[#7B3FFF]" />
-                  <span className="text-sm font-semibold text-[#111111]">
-                    Clean UI
-                  </span>
-                </div>
-              </motion.div>
+    {/* IMAGE */}
+    <motion.div
+      animate={{ y:[0,-12,0] }}
+      transition={{
+        duration:6,
+        repeat:Infinity,
+        repeatType:"mirror",
+        ease:"easeInOut"
+      }}
+      className="relative z-10 flex items-center justify-center"
+    >
 
-              {/* Badge 4: Fast & Optimized */}
-              <motion.div
-                animate={{ y: [0, -9, 0], rotate: [0, -1, 0] }}
-                transition={{
-                  duration: 5.9,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1.2,
-                }}
-                className="absolute bottom-16 right-6 z-20 hidden scale-[0.72] rounded-2xl border border-[#ECECEC] bg-white px-4 py-3 shadow-[0_12px_30px_rgba(0,0,0,0.08)] sm:bottom-20 sm:right-6 sm:scale-90 lg:bottom-14 lg:right-8 lg:flex lg:scale-100 lg:px-5 lg:py-4"
-              >
-                <div className="flex items-center gap-2">
-                  <Zap size={18} className="text-[#7B3FFF]" />
-                  <span className="text-sm font-semibold text-[#111111]">
-                    Fast & Optimized
-                  </span>
-                </div>
-              </motion.div>
-            </div>
+      {/* spinning border */}
+      <motion.div
+        animate={{rotate:360}}
+        transition={{
+          duration:32,
+          repeat:Infinity,
+          ease:"linear"
+        }}
+        className="
+        absolute
+        h-[300px]
+        w-[300px]
+        rounded-full
+        border
+        border-dashed
+        border-[#7B3FFF]/80
 
-            {/* Tech Stack (Mobile) */}
-            <div className="mt-2 lg:hidden">
-              <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-[#6B7280]">
-                Tech Stack
-              </p>
-              <div className="flex flex-wrap justify-center gap-3">
-                {TECHNOLOGIES.map((tech) => (
-                  <span
-                    key={tech}
-                    className="rounded-full border border-[#E5E7EB] bg-white px-4 py-2 text-sm font-medium text-[#374151] shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-violet-300 hover:shadow-md"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </motion.div>
+        sm:h-[390px]
+        sm:w-[390px]
 
+        lg:h-[505px]
+        lg:w-[505px]
+        "
+      />
+
+      <div
+        className="
+        relative
+        h-[260px]
+        w-[260px]
+        overflow-hidden
+        rounded-full
+        border-8
+        border-white
+        bg-white
+        shadow-[0_40px_100px_rgba(123,63,255,0.24)]
+
+        sm:h-[340px]
+        sm:w-[340px]
+
+        lg:h-[470px]
+        lg:w-[470px]
+        "
+      >
+        <Image
+          src="/images/hero/alyanali.png"
+          alt="Alyan Ali"
+          fill
+          priority
+          className="object-cover"
+        />
+      </div>
+
+    </motion.div>
+
+
+    {/* FLOATING BADGES ONLY DESKTOP */}
+
+    <div className="hidden lg:block">
+
+      {/* keep your four floating badges here */}
+
+    </div>
+
+  </div>
+
+
+  {/* TECH STACK MOBILE + TABLET */}
+
+  <div className="mt-8 w-full lg:hidden">
+
+    <p className="mb-4 text-center text-sm font-semibold uppercase tracking-wider text-[#6B7280]">
+      Tech Stack
+    </p>
+
+
+    <div className="flex flex-wrap justify-center gap-3">
+
+      {TECHNOLOGIES.map((tech)=>(
+        <span
+          key={tech}
+          className="
+          rounded-full
+          border
+          border-[#E5E7EB]
+          bg-white
+          px-4
+          py-2
+          text-sm
+          font-medium
+          text-[#374151]
+          shadow-sm
+          "
+        >
+          {tech}
+        </span>
+      ))}
+
+    </div>
+
+  </div>
+
+
+</motion.div>
         </div>
       </Container>
     </section>
