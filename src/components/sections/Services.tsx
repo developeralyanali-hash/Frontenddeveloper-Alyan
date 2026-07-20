@@ -114,7 +114,7 @@ export default function Services() {
               variants={fadeIn}
               className="mx-auto mt-7 max-w-3xl text-center text-base leading-8 text-[#6B7280] sm:text-lg"
             >
-              I develop scalable frontend applications with React and Next.js for SaaS products, healthcare platforms, manufacturing systems, and digital agencies—delivering modern interfaces that are fast, intuitive, and built for real business workflows.
+              I build fast, scalable React and Next.js applications with modern, intuitive interfaces that help businesses streamline workflows, improve user experience, and support long-term growth.
             </motion.p>
 
             {/* Service Cards Grid */}
